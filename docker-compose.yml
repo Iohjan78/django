@@ -1,0 +1,16 @@
+services:
+  backend:
+    image: django
+    build:
+      context: ./config/django-image
+      dockerfile: Dockerfile
+    volumes:
+      - ./src/django:/usr/src/app
+    user: 1000:1000
+    ports:
+      - "8000:8000"
+    networks:
+      red:
+
+networks:
+  red:
